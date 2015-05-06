@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+	<!-- 
+	 * Table created by CSS Menu Maker 
+	 * Visit: http://cssmenumaker.com/blog/stylish-css-tables-tutorial
+	 -->
+	<style>
+		table { 
+			color: #333;
+			font-family: Helvetica, Arial, sans-serif;
+			width: 100%; 
+			border-collapse: 
+			collapse; border-spacing: 0; 
+		}
+
+		td, th { 
+			border: 1px solid transparent; /* No more visible border */
+			height: 30px; 
+			transition: all 0.3s;  /* Simple transition for hover effect */
+		}
+
+		th {
+			background: #DFDFDF;  /* Darken header a bit */
+			font-weight: bold;
+		}
+
+		td {
+			background: #FAFAFA;
+			text-align: center;
+		}
+
+		/* Cells in even rows (2,4,6...) are one color */ 
+		tr:nth-child(even) td { background: #F1F1F1; }   
+
+		/* Cells in odd rows (1,3,5...) are another (excludes header cells)  */ 
+		tr:nth-child(odd) td { background: #FEFEFE; }  
+
+		tr td:hover { background: #666; color: #FFF; } /* Hover cell effect! */
+	</style>
+
+	<body>
+
+		<center>
+			<h1> Cube World </h1>
+			<h5> Function Calls </h5>
+		</center>
+	
+		<br>
+		<table>
+			<tr>
+				<th>Memory Offset</th>
+				<th>OPCODE/Hex/Machine Code</th>
+				<th>ASSEMBLY</th>
+				<th>Function</th>
+				<th>Description</th>
+			</tr>
+			<tr>
+				<td>015D7347</th>
+				<td>F3 0F11 86 6C010000</th>
+				<td>movss [esi+0000016C], xmm0</th>
+				<td>evt_onPlayerEat(float regen or food-obj ref)</th>
+				<td>This is called when ever the chacter eats Food.</th>
+			</tr>
+			<tr>
+				<td>015DAB93</th>
+				<td>F3 0F11 80 6C010000</th>
+				<td>movss [eax+0000016C], xmm0</th>
+				<td>evt_onPlayerFall(float damage)</th>
+				<td>This is called when ever the player takes fall damange</th>
+			</tr>
+			<tr>
+				<td>0155484B</th>
+				<td>F3 0F11 86 6C010000</th>
+				<td>movss [eax+0000016C], xmm0</th>
+				<td>evt_onPlayerAttacked(float dam or entity-ref)</th>
+				<td>This is called when the player takes damage of a entity/player</th>
+			</tr>
+		</table>
+
+	</body>
+</html>
