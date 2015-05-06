@@ -19,7 +19,7 @@ List of all of the Cube World offsets I have found so far. Please note the funct
 <table>
 	<tr>
 		<th>Memory Offset</th>
-		<th>OPCODE/Hex/Machine Code</th>
+		<th>Opcode</th>
 		<th>ASSEMBLY</th>
 		<th>Function</th>
 		<th>Description</th>
@@ -28,21 +28,21 @@ List of all of the Cube World offsets I have found so far. Please note the funct
 		<td>015D7347</th>
 		<td>F3 0F11 86 6C010000</th>
 		<td>movss [esi+0000016C], xmm0</th>
-		<td>evt_onPlayerEat(float regenAmt or Food-OBJ ref)</th>
-		<td>This is called when ever the character eats Food.</th>
+		<td>evt_onPlayerEat(float or int REGEN)</th>
+		<td>This function sets the health when ever the character eats Food.</th>
 	</tr>
 	<tr>
 		<td>015DAB93</th>
 		<td>F3 0F11 80 6C010000</th>
 		<td>movss [eax+0000016C], xmm0</th>
 		<td>evt_onPlayerFall(float damage)</th>
-		<td>This is called when ever the player takes fall damage</th>
+		<td>This function sets the health when ever the player takes fall damage</th>
 	</tr>
 	<tr>
 		<td>0155484B</th>
 		<td>F3 0F11 86 6C010000</th>
 		<td>movss [eax+0000016C], xmm0</th>
 		<td>evt_onPlayerAttacked(float dam or entity-ref)</th>
-		<td>This is called when the player takes damage of a entity/player</th>
+		<td>This function sets the health when the player takes damage from a entity/player</th>
 	</tr>
 </table>
