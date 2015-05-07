@@ -15,3 +15,8 @@ You didn't here it for me, I'm just implying the store is closed and you cant bu
 Functions/Offsets
 ======
 The list of found offsets/functions are located in Offsets.csv
+
+HELP NEEDED
+======
+* If you see anything im doing wrong, please tell me.
+* If you know anything that can help, please fork.
