@@ -10,39 +10,8 @@ Why
 Our poor fan favourite game is dying, no matter how we see it. The master-piece is going, so i and hopefully other developers will help me decompile and create a API like application that will allow us to make more use of this game and breath more life into it and bring it back to the market, the game may only be obtainable from pirating it but if the game is successful, I'm sure Picroma will reopen the store.
 
 Pirating?
-======
-You didn't here it for me, im just saying the store is closed and you cant buy it.
+You didn't here it for me, I'm just implying the store is closed and you cant buy it.
 
-Functions
+Functions/Offsets
 ======
-List of all of the Cube World offsets I have found so far. Please note the function names are not the ones used in the source code, neither are the parameters, its what I can pull out from the ASM.
-<table>
-	<tr>
-		<th>Memory Offset</th>
-		<th>Opcode</th>
-		<th>ASSEMBLY</th>
-		<th>Function</th>
-		<th>Description</th>
-	</tr>
-	<tr>
-		<td>015D7347</th>
-		<td>F3 0F11 86 6C010000</th>
-		<td>movss [esi+0000016C], xmm0</th>
-		<td>evt_onPlayerEat(float or int REGEN)</th>
-		<td>This function sets the health when ever the character eats Food.</th>
-	</tr>
-	<tr>
-		<td>015DAB93</th>
-		<td>F3 0F11 80 6C010000</th>
-		<td>movss [eax+0000016C], xmm0</th>
-		<td>evt_onPlayerFall(float damage)</th>
-		<td>This function sets the health when ever the player takes fall damage</th>
-	</tr>
-	<tr>
-		<td>0155484B</th>
-		<td>F3 0F11 86 6C010000</th>
-		<td>movss [eax+0000016C], xmm0</th>
-		<td>evt_onPlayerAttacked(float dam or entity-ref)</th>
-		<td>This function sets the health when the player takes damage from a entity/player</th>
-	</tr>
-</table>
+The list of found offsets/functions are located in Offsets.csv
