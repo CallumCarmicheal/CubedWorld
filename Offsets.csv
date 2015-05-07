@@ -1,4 +1,4 @@
-Memory Offset	Opcode	ASSEMBLY	Function	Description
+Memory  Offset	Opcode	ASSEMBLY	Function	Description
 015D7347	F3 0F11 86 6C010000	movss [esi+0000016C], xmm0	events->onPlayerEat(float regenAmt)	Set the health when the player eats.
 015DAB93	F3 0F11 80 6C010000	movss [eax+0000016C], xmm0	events->onPlayerFall(float damage)	Set the health when player takes falldamage.
 0155484B	F3 0F11 86 6C010000	movss [eax+0000016C], xmm0	events->onPlayerAttacked(float damage)	Set the health on Attacked by Ent/Ply
