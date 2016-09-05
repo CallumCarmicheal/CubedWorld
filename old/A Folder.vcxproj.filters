@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Assembly Stuff">
+      <UniqueIdentifier>{defa63b2-db98-4135-bc5b-cf6beb100f6c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Readme Stuff">
+      <UniqueIdentifier>{da508bc9-2532-4e23-b5bb-d7a14691fc91}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\asm\HUD\Options\RenderingDistance_Decrease.asm">
+      <Filter>Assembly Stuff</Filter>
+    </None>
+    <None Include="src\asm\HUD\Options\RenderingDistance_Increase.asm">
+      <Filter>Assembly Stuff</Filter>
+    </None>
+    <None Include="README.md">
+      <Filter>Readme Stuff</Filter>
+    </None>
+    <None Include="src\cpp\README.md">
+      <Filter>Readme Stuff</Filter>
+    </None>
+  </ItemGroup>
+</Project>

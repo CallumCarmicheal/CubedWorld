@@ -1,0 +1,9 @@
+﻿Build started 24/05/2016 19:23:36.
+     1>Project "G:\GitHub\CubedWorld\src\cpp\Loader\Loader.vcxproj" on node 2 (Build target(s)).
+     1>Link:
+         Loader.vcxproj -> G:\GitHub\CubedWorld\src\cpp\Loader\.\Debug\Loader.exe
+     1>Done Building Project "G:\GitHub\CubedWorld\src\cpp\Loader\Loader.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:00.12
