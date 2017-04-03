@@ -90,50 +90,70 @@ cubeworld_serv_SetupSocket (void *this) {
 
   v14 = &v16 ^ __security_cookie;
   arrayThis = this;
+  
   v2 = conWriteLine(std__cout, "Starting server...");// State we are starting the server
   conNewLine(v2, std__endl);
+  
   sListener = socket(2, 1, 0);
   *(arrayThis + 9) = sListener;
+  
   // Check if the socket was created
   if ( sListener == -1 )
     conWriteLine(std__cout, "Could not create server socket.");
+	// NOTE: There is no return, this will fallthrough!
+	
   // Assembly
-  __asm
-  {
+  __asm {
     xorps   xmm0, xmm0
     movq    qword ptr [ebp+name.sa_family], xmm0
     movq    qword ptr [ebp+name.sa_data+6], xmm0
   }
+  
   name.sa_family = 2;
   *&name.sa_data[0] = htons(0x3039u);           // Set the port for the socket
+  
   // ?!?!?! What
   sListener_2 = *(arrayThis + 9);
+  
   *&name.sa_data[2] = 0;
+  
   // Failed to bind socket
-  if ( bind(sListener_2, &name, 16) == -1 )
-  {
+  if ( bind(sListener_2, &name, 16) == -1 ) {
     tmpConO_5 = conWriteLine(std__cout, "Could not bind socket.");
     conNewLine(tmpConO_5, std__endl);
+	
+	// NOTE: There is no return, this will fallthrough!
   }
+  
   // Failed to listen for clients?!?!?!
-  if ( listen(*(arrayThis + 9), 10) == -1 )
-  {
+  if ( listen(*(arrayThis + 9), 10) == -1 ) {
     tmpConO_6 = conWriteLine(std__cout, "Listen failed.");
     conNewLine(tmpConO_6, std__endl);
+	
+	// NOTE: There is no return, this will fallthrough!
   }
-  *(arrayThis + 76) = 1;                        // Maybe a bool to state the server has started
+  
+  // Maybe a bool to state the server has started
+  *(arrayThis + 76) = 1; 
+  
   v9 = conWriteLine(std__cout, "Server started. Enter Q to quit.");
   conNewLine(v9, std__endl);
+  
   v10 = off_55B1E0;
   v11 = arrayThis;
   v12 = &v10;
   v15 = 1;
+  
   result = sub_413640(&v10);
   v8 = v12;
+  
   *(arrayThis + 20) = result;
+  
   v15 = -1;
+  
   if ( v8 )
     result = (*(*v8 + 16))(v8 != &v10);
+	
   return result;
 }
 ```
