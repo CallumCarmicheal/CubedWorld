@@ -145,7 +145,7 @@ cubeworld_serv_SetupSocket (void *this) {
 failedSocketCreate
 ```
 Assembly Code		= call Server.exe+12710
-					= call 00E32710
+             		= call 00E32710
 Machine Code		= E8 3F 9F FE FF
 Address in Binary	= 004287FA
 Actual Address 		= 000287FA
@@ -156,7 +156,7 @@ Pointer Offset 		= 0
 failedSocketBind
 ```
 Assembly Code		= call Server.exe+12710
-					= call 00E32710
+             		= call 00E32710
 Machine Code		= E8 3F 9F FE FF
 Address in Binary	= 00428851
 Actual Address 		= 00028851
@@ -167,7 +167,7 @@ Pointer Offset 		= 0
 failedToListen
 ```
 Assembly Code		= call Server.exe+12710
-					= call 00E32710
+             		= call 00E32710
 Machine Code		= E8 3F 9F FE FF
 Address in Binary	= 00428881
 Actual Address 		= 00028881
@@ -178,7 +178,7 @@ Pointer Offset 		= 0
 socketSuccess
 ```
 Assembly Code		= call Server.exe+12710
-					= call 00E32710
+             		= call 00E32710
 Machine Code		= E8 3F 9F FE FF
 Address in Binary	= 004288A6
 Actual Address 		= 000288A6
