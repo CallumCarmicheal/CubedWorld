@@ -4,3 +4,5 @@
 #include <io.h>
 #include <string>
 #include <tchar.h>
+
+#define null NULL

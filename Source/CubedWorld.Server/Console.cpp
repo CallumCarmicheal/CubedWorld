@@ -1,5 +1,5 @@
 #include "Console.h"
-
+#include <conio.h>
 
 /*
  * Create the console 
@@ -89,10 +89,79 @@ void Console::Write(LPWSTR str) {
 	wprintf(str);
 }
 
+/*
+ * Print a new line
+ */
 void Console::NewLine() {
 	printf("\n");
 }
 
+/*
+ * Set consoles title
+ */
 void Console::SetTitle(LPCSTR str) {
    SetConsoleTitle(str);
+}
+
+
+void Console::Wait() {
+   _getch();
+}
+
+void Console::Wait(char* str) {
+   Console::Write(str);
+   Console::Wait();
+}
+
+void Console::Wait(LPWSTR str) {
+   Console::Write(str);
+   Console::Wait();
+}
+
+void Console::WaitLine(char* str) {
+   Console::WriteLine(str);
+   Console::Wait();
+}
+
+void Console::WaitLine(LPWSTR str) {
+   Console::WriteLine(str);
+   Console::Wait();
+}
+
+void Console::WaitF(char* str, ...) {
+   va_list argptr = NULL;
+   va_start(argptr, str);
+   vprintf(str, argptr);
+   va_end(argptr);
+
+   Console::Wait();
+}
+
+void Console::WaitF(LPWSTR str, ...) {
+   va_list argptr = NULL;
+   va_start(argptr, str);
+   vwprintf(str, argptr);
+   va_end(argptr);
+
+   Console::Wait();
+}
+
+void Console::WaitLineF(char* str, ...) {
+   va_list argptr = NULL;
+   va_start(argptr, str);
+   vprintf(str, argptr);
+   va_end(argptr);
+
+   printf("\n");
+   Console::Wait();
+}
+
+void Console::WaitLineF(LPWSTR str, ...) {
+   va_list argptr = NULL;
+   va_start(argptr, str);
+   vwprintf(str, argptr);
+   va_end(argptr);
+
+   printf("\n");
+   Console::Wait();
 }

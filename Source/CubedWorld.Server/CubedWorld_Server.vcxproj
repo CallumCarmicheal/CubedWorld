@@ -135,7 +135,6 @@ copy "G:\G\GitHub\CubedWorld - CW Reversing\CubedWorld\Source\CubedWorld.Server\
     <ClCompile Include="App.cpp" />
     <ClCompile Include="CodeCaves.cpp" />
     <ClCompile Include="CubedWorld.cpp" />
-    <ClCompile Include="CWHandle.cpp" />
     <ClCompile Include="DllMain.cpp">
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Disabled</Optimization>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">WIN32;_DEBUG;_WINDOWS;_MBCS;_USRDLL;Base_EXPORTS</PreprocessorDefinitions>

@@ -21,6 +21,18 @@ public:
 	static void Write(char* str);
 	static void Write(LPWSTR str);
 
+    static void Wait();
+    static void Wait(char* str);
+    static void Wait(LPWSTR str);
+
+    static void WaitF(char* str, ...);
+    static void WaitF(LPWSTR str, ...);
+
+    static void WaitLine(char* str);
+    static void WaitLine(LPWSTR str);
+
+    static void WaitLineF(char* str, ...);
+    static void WaitLineF(LPWSTR str, ...);
 	static void NewLine();
 };
 

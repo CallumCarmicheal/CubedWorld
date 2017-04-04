@@ -6,33 +6,17 @@
 class CWHandle;
 
 class CubedWorld {
+private:
+   CWEvent* eventHandler;
 
 public:
-   CWEvent* const eventHandler;
-   DWORD dwBaseAddress;
-   CWHandle *cwHandle = NULL;
-   int x = 1;
+   HINSTANCE   hCubedWorld;
+   DWORD       dwBaseAddress;
+   CWHandle    *cwHandle = NULL;
 
    CubedWorld();
    void setupCodeCaves();
-   //void setEventHandler(CWEvent* eventHandler);
-
-   void printSomething() {
-      Console::WriteLineF("CubedWorld->printSomething, %i", ++x);
-   }
+   void setEventHandler(CWEvent* eventHandler);
 
    CWEvent* getEventHandler();
-};
-
-class CWHandle {
-   bool procIsfrozen;
-      
-public:
-   HANDLE hCubeWorld;
-
-   CWHandle();
-   void FreezeProcess();
-   void ResumeProcess();
-   
-   bool isFreezed;
 };

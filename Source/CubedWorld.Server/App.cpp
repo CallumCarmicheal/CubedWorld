@@ -2,20 +2,19 @@
 #include "App.h"
 #include "Console.h"
 
-void App::Initialize() {
-   Console::WriteLine("App::Initialize()");
-}
-
-void App::evtSocketCreated() {
-   Console::WriteLineF("App::evtSocketCreated()");
-}
+void App::Initialize()        {}
+void App::evtSocketCreated() { Console::WaitLine("Attach DEBUGGER NAOW!"); }
 
 void App::evtSocketError(SocketErrorState state) {
    std::string result;
    result = CWEnumHelper::socketStateToString(state);
-   Console::WriteLineF("App::evtSocketError( %s )", result);
+   Console::WaitLineF("App::evtSocketError( %s )", result.c_str());
 }
 
 void App::evtSocketConnection() {
-   Console::WriteLine("App::evtSocketConnection()");
+      
+}
+
+void App::evtConsoleCommand(std::string command) {
+
 }

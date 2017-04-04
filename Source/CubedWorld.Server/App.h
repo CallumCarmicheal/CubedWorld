@@ -8,4 +8,5 @@ public:
    void evtSocketCreated() override;
    void evtSocketError(SocketErrorState socketState) override;
    void evtSocketConnection() override;
+   void evtConsoleCommand(std::string command) override;
 };

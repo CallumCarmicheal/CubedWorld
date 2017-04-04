@@ -158,6 +158,19 @@ cubeworld_serv_SetupSocket (void *this) {
 }
 ```
 
+### Functions
+Console Print
+```
+Pointer Address 	= Server.exe+12710
+```
+
+Server main loop
+```
+Address in Binary	= 00549C50
+Actual Address      = 00149C50
+Pointer Address     = Server.exe+00149C50
+```
+
 ### Setup Socket
 
 #### CodeCave Targets

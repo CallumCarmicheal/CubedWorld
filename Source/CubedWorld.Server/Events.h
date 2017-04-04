@@ -12,14 +12,11 @@ enum class SocketErrorState {
 
 class CWEvent {
 public: 
-   virtual void Initialize() { Console::WriteLine("BASE::Initialize()"); }
-   virtual void evtSocketError(SocketErrorState socketState) {}
-   virtual void evtSocketCreated() { Console::WriteLine("BASE::evtSocketCreated()");  }
-   virtual void evtSocketConnection() {}
-
-   void printSomething() {
-      Console::WriteLine("Test!");
-   }
+   virtual void Initialize()                                   {}
+   virtual void evtSocketError(SocketErrorState socketState)   {}
+   virtual void evtSocketCreated()                             {}
+   virtual void evtSocketConnection()                          {}
+   virtual void evtConsoleCommand(std::string command)         {}
 };
 
 class CWEnumHelper {
@@ -31,5 +28,7 @@ public:
       case SocketErrorState::FailedToListen:    return "Failed to listen";
       default:                                  return "Unknown error";
       }
+
+      return "Unknown error (fb)";
    }
 };

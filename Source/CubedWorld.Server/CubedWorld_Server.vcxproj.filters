@@ -42,9 +42,6 @@
     <ClCompile Include="CodeCaves.cpp">
       <Filter>Code Files\CubeWorld</Filter>
     </ClCompile>
-    <ClCompile Include="CWHandle.cpp">
-      <Filter>Code Files\CubeWorld</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Cave.h">
