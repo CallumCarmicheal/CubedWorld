@@ -12,32 +12,76 @@
 
 #pragma region 
 
-   CubedWorld *ptrCW;
+   CubedWorld *volatile ptrCW;
+
+   DWORD dwCWPtr;
 
    #pragma region
       void CB_Socket_FailedCreate() {
-         Console::WriteLine("Failed to create socket...\n\nPRESS ANY KEY TO EXIT");
-         //_getch();
+         /*
+         CWEvent* cwe = ptrCW->getEventHandler();
 
-         //exit(EXIT_FAILURE);
+         if (cwe != NULL) {
+            cwe->evtSocketError(SocketErrorState::FailedToCreate);
+         } else {
+            Console::WriteLine("Failed to create socket...\n\nPRESS ANY KEY TO EXIT");
+            _getch();
+            Console::WriteLine("[DEBUG] There is no event handler, using fallback");
+         } //*/
+
+         exit(EXIT_FAILURE);
       }
 
       void CB_Socket_FailedBind() {
-         Console::WriteLine("Failed to bind to address or port...\n\nPRESS ANY KEY TO EXIT");
-         //_getch();
+         /*
+         CWEvent* cwe = ptrCW->getEventHandler();
 
-         //exit(EXIT_FAILURE);
+         if (cwe != NULL) {
+            cwe->evtSocketError(SocketErrorState::FailedToBind);
+         } else {
+            Console::WriteLine("[DEBUG] There is no event handler, using fallback");
+            Console::WriteLine("Failed to bind to address or port...\n\nPRESS ANY KEY TO EXIT");
+            _getch();
+         }//*/
+
+         exit(EXIT_FAILURE);
       }
 
       void CB_Socket_FailedListen() {
-         Console::WriteLine("Failed to listen on socket...\n\nPRESS ANY KEY TO EXIT");
-         //_getch();
-
-         //exit(EXIT_FAILURE);
+         /*
+         CWEvent* cwe = ptrCW->getEventHandler();
+         `
+         if (cwe != NULL) {
+            cwe->evtSocketError(SocketErrorState::FailedToListen);
+         } else {
+            Console::WriteLine("[DEBUG] There is no event handler, using fallback");
+            Console::WriteLine("Failed to listen on socket...\n\nPRESS ANY KEY TO EXIT");
+            _getch();
+         } */
+         
+         exit(EXIT_FAILURE);
       }
 
       void CB_Socket_Success() {
-         Console::WriteLine("Socket successfully CREATED!");
+         //int cwe = 0;
+         //if (cwe != NULL) {
+            printf("(DW ) dwCWPtr: %p\n", dwCWPtr);
+            printf("(3rd) ptrCW  : %p\n", ptrCW);
+            _getch();
+
+            Console::WriteLine("[DEBUG] TESTING");
+            ptrCW->printSomething();
+            ptrCW->printSomething();
+            _getch();
+
+            printf("ptrCW->eventHandler: %p\n", ptrCW->eventHandler);
+            _getch();
+
+            ptrCW->eventHandler->evtSocketCreated();
+            _getch();
+         //} else {
+         //   Console::WriteLine("[DEBUG] cwe == null");
+         //}
       }
    #pragma endregion Assembly callbacks
 
@@ -152,6 +196,8 @@
    DWORD addr_Socket_FailedToListen;
    DWORD addr_Socket_SocketSuccess;
 
+
+
    void setupCodeCave_Socket(CubedWorld *cw) {
       // Display debug
       Console::WriteLine("CodeCaves: Socket -> Started.");
@@ -170,6 +216,16 @@
 
       // Store our CW instance
       ptrCW = cw;
+
+      ptrCW->getEventHandler()->Initialize(); // it works here
+
+      dwCWPtr = (DWORD)ptrCW;
+
+      printf ("(1st) ptrCW  : %p\n", ptrCW);
+      printf ("(DW ) dwCWPtr: %p\n", dwCWPtr);
+      
+
+      //dwCWPtr = (DWORD)cw;
 
       // Display debug
       Console::WriteLine("CodeCaves: Socket -> Finished.");

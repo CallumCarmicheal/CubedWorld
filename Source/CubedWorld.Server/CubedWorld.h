@@ -1,20 +1,25 @@
 #pragma once
 #include "stdafx.h"
 #include "Events.h"
+#include "Console.h"
 
 class CWHandle;
 
 class CubedWorld {
-   CWEvent* eventHandler;
 
 public:
+   CWEvent* const eventHandler;
    DWORD dwBaseAddress;
-   CWHandle *cwHandle;
-
+   CWHandle *cwHandle = NULL;
+   int x = 1;
 
    CubedWorld();
    void setupCodeCaves();
-   void setEventHandler(CWEvent *eventHandler);
+   //void setEventHandler(CWEvent* eventHandler);
+
+   void printSomething() {
+      Console::WriteLineF("CubedWorld->printSomething, %i", ++x);
+   }
 
    CWEvent* getEventHandler();
 };

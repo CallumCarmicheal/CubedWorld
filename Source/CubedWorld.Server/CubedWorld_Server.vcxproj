@@ -91,7 +91,8 @@
       <Culture>0x0409</Culture>
     </ResourceCompile>
     <PostBuildEvent>
-      <Command>copy "G:\G\GitHub\CubedWorld\Source\CubedWorld.Server\Debug\CubedWorld.Server.dll" "E:\CubeWorld\CubedWorld.Server\" /Y</Command>
+      <Command>copy "G:\G\GitHub\CubedWorld - CW Reversing\CubedWorld\Source\CubedWorld.Server\Debug\CubedWorld.Server.dll" "E:\CubeWorld\CubedWorld.Server\" /Y
+copy "G:\G\GitHub\CubedWorld - CW Reversing\CubedWorld\Source\CubedWorld.Server\Debug\Base.pdb" "E:\CubeWorld\CubedWorld.Server\CubedWorld.Server.pdb" /Y</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">

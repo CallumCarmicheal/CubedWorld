@@ -2,9 +2,10 @@
 #include "stdafx.h"
 #include "Events.h"
 
-class App : CWEvent {
+class App : public CWEvent {
 public:
-   virtual void Initialize() override;
-   virtual void evtSocketListen(SocketState socketState) override;
-   virtual void evtSocketConnection() override;
+   void Initialize() override;
+   void evtSocketCreated() override;
+   void evtSocketError(SocketErrorState socketState) override;
+   void evtSocketConnection() override;
 };

@@ -1,9 +1,9 @@
 #pragma once
 
 #include <socketapi.h>
+#include "Console.h"
 
-enum class SocketState {
-   Success,
+enum class SocketErrorState {
    FailedToCreate,
    FailedToBind,
    FailedToListen
@@ -12,20 +12,24 @@ enum class SocketState {
 
 class CWEvent {
 public: 
-   virtual void Initialize() {}
-   virtual void evtSocketListen(SocketState socketState) {}
+   virtual void Initialize() { Console::WriteLine("BASE::Initialize()"); }
+   virtual void evtSocketError(SocketErrorState socketState) {}
+   virtual void evtSocketCreated() { Console::WriteLine("BASE::evtSocketCreated()");  }
    virtual void evtSocketConnection() {}
+
+   void printSomething() {
+      Console::WriteLine("Test!");
+   }
 };
 
 class CWEnumHelper {
 public:
-   static std::string socketStateToString(SocketState state) {
+   static std::string socketStateToString(SocketErrorState state) {
       switch (state) {
-      case SocketState::Success:             return "Success";
-      case SocketState::FailedToCreate:      return "Failed to create socket";
-      case SocketState::FailedToBind:        return "Failed to bind to specified address";
-      case SocketState::FailedToListen:      return "Failed to listen";
-      default:                               return "Unknown error";
+      case SocketErrorState::FailedToCreate:    return "Failed to create socket";
+      case SocketErrorState::FailedToBind:      return "Failed to bind to specified address";
+      case SocketErrorState::FailedToListen:    return "Failed to listen";
+      default:                                  return "Unknown error";
       }
    }
 };
